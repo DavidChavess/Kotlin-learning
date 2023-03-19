@@ -1,9 +1,9 @@
-package test
+package br.com.chavesdavid.bytebank.test
 
-import model.Cliente
-import model.Diretor
-import model.Gerente
-import model.SistemaInterno
+import br.com.chavesdavid.bytebank.model.Cliente
+import br.com.chavesdavid.bytebank.model.Diretor
+import br.com.chavesdavid.bytebank.model.Gerente
+import br.com.chavesdavid.bytebank.model.SistemaInterno
 
 fun testaAutenticacao() {
     val gerente = Gerente(

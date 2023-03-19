@@ -1,4 +1,4 @@
-package model
+package br.com.chavesdavid.bytebank.model
 
 class Analista(
     nome: String,

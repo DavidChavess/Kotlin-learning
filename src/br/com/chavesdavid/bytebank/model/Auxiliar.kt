@@ -1,6 +1,6 @@
-package model
+package br.com.chavesdavid.bytebank.model
 
-import model.Funcionario as Func
+import br.com.chavesdavid.bytebank.model.Funcionario as Func
 
 class Auxiliar(
     nome: String,

@@ -1,11 +1,10 @@
-package model
+package br.com.chavesdavid.bytebank.model
 
-class Diretor(
+class Gerente(
     nome: String,
     cpf: String,
     salario: Double,
-    senha: Int,
-    val plr: Double
+    senha: Int
 ) : FuncionarioAdmin(
     nome = nome,
     cpf = cpf,
@@ -15,7 +14,7 @@ class Diretor(
 
     override val bonificacao: Double
         get() {
-            return salario + plr
+            return salario
         }
 
 }

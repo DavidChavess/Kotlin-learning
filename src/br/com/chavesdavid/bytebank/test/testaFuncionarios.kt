@@ -1,9 +1,9 @@
-package test
+package br.com.chavesdavid.bytebank.test
 
-import model.Analista
-import model.CalculadoraBonificacao
-import model.Diretor
-import model.Gerente
+import br.com.chavesdavid.bytebank.model.Analista
+import br.com.chavesdavid.bytebank.model.CalculadoraBonificacao
+import br.com.chavesdavid.bytebank.model.Diretor
+import br.com.chavesdavid.bytebank.model.Gerente
 
 fun testaFuncionarios() {
     val alex = Analista(

@@ -1,6 +1,4 @@
-package model
-
-import model.Funcionario
+package br.com.chavesdavid.bytebank.model
 
 class CalculadoraBonificacao {
 

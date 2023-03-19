@@ -1,13 +1,17 @@
 package br.com.chavesdavid.bytebank.test
 
+import br.com.chavesdavid.bytebank.model.Cliente
+import br.com.chavesdavid.bytebank.model.Conta
 import br.com.chavesdavid.bytebank.model.ContaCorrente
 import br.com.chavesdavid.bytebank.model.ContaPoupanca
 
 fun testaComportamentosConta() {
-    val contaAlex = ContaCorrente(titular = "Alex", numero = 1000)
+    val alex = Cliente(nome = "Alex", cpf = "1", senha = 1)
+    val contaAlex = ContaCorrente(titular = alex, numero = 1000)
     contaAlex.deposita(200.0)
 
-    val contaFran = ContaPoupanca(numero = 1001, titular = "Fran")
+    val fran = Cliente(nome = "Fran", cpf = "1", senha = 1)
+    val contaFran = ContaPoupanca(numero = 1001, titular = fran)
     contaFran.deposita(300.0)
 
     println(contaFran.titular)

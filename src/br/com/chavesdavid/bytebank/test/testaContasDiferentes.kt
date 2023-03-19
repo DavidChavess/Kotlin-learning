@@ -1,15 +1,16 @@
 package br.com.chavesdavid.bytebank.test
 
+import br.com.chavesdavid.bytebank.model.Cliente
 import br.com.chavesdavid.bytebank.model.ContaCorrente
 import br.com.chavesdavid.bytebank.model.ContaPoupanca
 
 fun testaContasDiferentes() {
     val contaCorrente = ContaCorrente(
-        titular = "Alex",
+        titular = Cliente(nome = "Alex", cpf = "1", senha = 1),
         numero = 1000
     )
     val contaPoupanca = ContaPoupanca(
-        titular = "Fran",
+        titular = Cliente(nome = "Fran", cpf = "2", senha = 2),
         numero = 1001
     )
 
@@ -34,4 +35,7 @@ fun testaContasDiferentes() {
 
     println("saldo poupança após transferir para corrente: ${contaPoupanca.saldo}")
     println("saldo corrente após receber transferência: ${contaCorrente.saldo}")
+
+    println("Titular conta corrente: ${contaCorrente.titular}")
+    println("Titular conta poupança: ${contaPoupanca.titular}")
 }

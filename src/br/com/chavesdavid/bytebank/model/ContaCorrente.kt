@@ -1,7 +1,7 @@
 package br.com.chavesdavid.bytebank.model
 
 class ContaCorrente(
-    titular: String,
+    titular: Cliente,
     numero: Int
 ) : Conta(
     titular = titular,

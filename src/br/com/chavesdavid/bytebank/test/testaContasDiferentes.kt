@@ -15,6 +15,8 @@ fun testaContasDiferentes() {
         numero = 1001
     )
 
+    println("Endereco BANCO = ${contaPoupanca.titular.enderecoBanco}")
+
     contaCorrente.deposita(1000.0)
     contaPoupanca.deposita(1000.0)
 

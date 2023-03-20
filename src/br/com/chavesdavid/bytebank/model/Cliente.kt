@@ -17,6 +17,4 @@ class Cliente(
     override fun toString(): String {
         return "Cliente(nome='$nome', cpf='$cpf', endereco=$endereco, senha=$senha)"
     }
-
-
 }

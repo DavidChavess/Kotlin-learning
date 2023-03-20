@@ -3,10 +3,11 @@ package br.com.chavesdavid.bytebank.test
 import br.com.chavesdavid.bytebank.model.Cliente
 import br.com.chavesdavid.bytebank.model.ContaCorrente
 import br.com.chavesdavid.bytebank.model.ContaPoupanca
+import br.com.chavesdavid.bytebank.model.Endereco
 
 fun testaContasDiferentes() {
     val contaCorrente = ContaCorrente(
-        titular = Cliente(nome = "Alex", cpf = "1", senha = 1),
+        titular = Cliente(nome = "Alex", cpf = "1", senha = 1, endereco = Endereco(logradouro = "Rua sobe e desce")),
         numero = 1000
     )
     val contaPoupanca = ContaPoupanca(

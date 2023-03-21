@@ -1,16 +1,18 @@
 package br.com.chavesdavid.bytebank.model
 
-var QUANTIDADE_CONTAS = 0
-    private set
-
 abstract class Conta(
     var titular: Cliente,
     val numero: Int
 ) {
 
+    companion object {
+        var totalAccount = 0
+            private set
+    }
+
     init {
         println("Criando conta")
-        QUANTIDADE_CONTAS++
+        totalAccount++
     }
 
     var saldo = 0.0
@@ -41,12 +43,9 @@ class ContaCorrente(
     titular = titular,
     numero = numero
 ) {
-    init {
-        QUANTIDADE_CONTAS++
-    }
     override fun saca(valor: Double) {
         val valorComTaxa = valor + 0.1
-        if(this.saldo >= valorComTaxa){
+        if (this.saldo >= valorComTaxa) {
             this.saldo -= valorComTaxa
         }
     }
@@ -59,11 +58,8 @@ class ContaPoupanca(
     titular = titular,
     numero = numero
 ) {
-    init {
-        QUANTIDADE_CONTAS++
-    }
     override fun saca(valor: Double) {
-        if(this.saldo >= valor){
+        if (this.saldo >= valor) {
             this.saldo -= valor
         }
     }

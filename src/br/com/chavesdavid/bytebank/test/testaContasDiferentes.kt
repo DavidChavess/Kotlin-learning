@@ -14,9 +14,6 @@ fun testaContasDiferentes() {
         titular = Cliente(nome = "Fran", cpf = "2", senha = 2),
         numero = 1001
     )
-
-    println("Endereco BANCO = ${contaPoupanca.titular.enderecoBanco}")
-
     contaCorrente.deposita(1000.0)
     contaPoupanca.deposita(1000.0)
 

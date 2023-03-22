@@ -1,9 +1,7 @@
 package br.com.chavesdavid.bytebank
 
-import br.com.chavesdavid.bytebank.model.Conta
-import br.com.chavesdavid.bytebank.test.testaContasDiferentes
+import testaCasting
 
 fun main() {
-    testaContasDiferentes()
-    println("total de contas criadas ${Conta.totalAccount}")
+    testaCasting()
 }

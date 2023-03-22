@@ -1,7 +1,7 @@
 package br.com.chavesdavid.bytebank
 
-import testaCasting
+import testaEquals
 
 fun main() {
-    testaCasting()
+    testaEquals()
 }

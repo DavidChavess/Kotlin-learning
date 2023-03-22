@@ -1,13 +1,7 @@
 package br.com.chavesdavid.bytebank
 
-import testaIfExpression
-import testaTryCatchExpression
-import testaWhenExpression
+import br.com.chavesdavid.bytebank.test.testaComportamentosConta
 
 fun main() {
-    testaIfExpression()
-    println()
-    testaWhenExpression()
-    println()
-    testaTryCatchExpression()
+    testaComportamentosConta()
 }

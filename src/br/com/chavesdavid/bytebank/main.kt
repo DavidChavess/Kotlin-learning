@@ -1,7 +1,13 @@
 package br.com.chavesdavid.bytebank
 
-import testaEquals
+import testaIfExpression
+import testaTryCatchExpression
+import testaWhenExpression
 
 fun main() {
-    testaEquals()
+    testaIfExpression()
+    println()
+    testaWhenExpression()
+    println()
+    testaTryCatchExpression()
 }

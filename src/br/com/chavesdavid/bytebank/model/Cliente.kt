@@ -8,6 +8,7 @@ class Cliente(
 ) : Autenticavel {
 
     override fun autentica(senha: Int): Boolean {
+        println("Validando autenticação do cliente")
         if (this.senha == senha) {
             return true
         }

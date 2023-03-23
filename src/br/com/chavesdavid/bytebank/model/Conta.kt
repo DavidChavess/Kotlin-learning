@@ -1,11 +1,12 @@
 package br.com.chavesdavid.bytebank.model
 
+import br.com.chavesdavid.bytebank.exception.FalhaAutenticacaoException
 import br.com.chavesdavid.bytebank.exception.SaldoInssuficienteException
 
 abstract class Conta(
     var titular: Cliente,
     val numero: Int
-) {
+) : Autenticavel {
 
     companion object {
         var totalAccount = 0
@@ -28,10 +29,19 @@ abstract class Conta(
 
     abstract fun saca(valor: Double)
 
-    fun transfere(valor: Double, destino: Conta) {
-        if (saldo < valor) throw SaldoInssuficienteException()
+    fun transfere(valor: Double, destino: Conta, senha: Int) {
+        if (saldo < valor)
+            throw SaldoInssuficienteException(message = "Saldo inssuficiente, saldo = $saldo, valor da transferência = $valor")
+
+        if (!autentica(senha))
+            throw FalhaAutenticacaoException()
+
         saldo -= valor
         destino.deposita(valor)
+    }
+
+    override fun autentica(senha: Int): Boolean {
+        return titular.autentica(senha)
     }
 }
 

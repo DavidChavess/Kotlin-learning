@@ -1,5 +1,6 @@
 package br.com.chavesdavid.bytebank.test
 
+import br.com.chavesdavid.bytebank.exception.FalhaAutenticacaoException
 import br.com.chavesdavid.bytebank.exception.SaldoInssuficienteException
 import br.com.chavesdavid.bytebank.model.Cliente
 import br.com.chavesdavid.bytebank.model.ContaCorrente
@@ -49,9 +50,13 @@ fun testaComportamentosConta() {
     println("Transferindo da conta da Fran para o Alex")
 
     try {
-        contaFran.transfere(destino = contaAlex, valor = 100.0)
+        contaFran.transfere(destino = contaAlex, valor = 100.0, senha = 1)
         println("Transferência sucedida")
     } catch (ex: SaldoInssuficienteException) {
+        println("Falha na transferência")
+        println(ex.message)
+        ex.printStackTrace()
+    } catch (ex: FalhaAutenticacaoException) {
         println("Falha na transferência")
         println(ex.message)
         ex.printStackTrace()

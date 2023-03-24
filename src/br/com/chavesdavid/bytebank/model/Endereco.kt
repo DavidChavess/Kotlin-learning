@@ -1,7 +1,7 @@
 package br.com.chavesdavid.bytebank.model
 
 class Endereco(
-    var logradouro: String = "",
+    var logradouro: String? = "",
     var numero: Int = 0,
     var bairro: String = "",
     var cidade: String = "",

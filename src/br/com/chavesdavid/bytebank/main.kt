@@ -1,14 +1,36 @@
 package br.com.chavesdavid.bytebank
 
 fun main() {
-    println()
-    testaSomaFuncaoReferencia()
-    println()
-    testaSomaFuncaoLambda()
-    println()
-    testaSomaFuncaoAnonima()
-    println()
-    testaSomaFuncaoClasse()
+//    println()
+//    testaSomaFuncaoReferencia()
+//    println()
+//    testaSomaFuncaoLambda()
+//    println()
+//    testaSomaFuncaoAnonima()
+//    println()
+//    testaSomaFuncaoClasse()
+
+    testaFuncoesComMultiplosRetornos()
+}
+
+private fun testaFuncoesComMultiplosRetornos() {
+    val calculaBonificacaoMultiploRetornoLambda: (Double) -> Double = bon@{
+        if (it > 1000) {
+            return@bon it + it * 0.1
+        }
+        it + it * 0.2
+    }
+
+    println("Funcção lambda com multiplo retorno ${calculaBonificacaoMultiploRetornoLambda(1000.0)}")
+
+    val calculaBonificacaoMultiploRetornoFunAnonima = fun(salario: Double): Double {
+        if (salario > 1000) {
+            return salario + salario * 0.1
+        }
+        return salario + salario * 0.2
+    }
+
+    println("Funcção anônima com multiplo retorno ${calculaBonificacaoMultiploRetornoFunAnonima(1000.0)}")
 }
 
 fun testaSomaFuncaoLambda() {
@@ -18,19 +40,40 @@ fun testaSomaFuncaoLambda() {
         it.n1 + it.n2
     }
 
-    val soma2 = { n1: Double, n2: Double ->
+    val soma2: (Double, Double) -> Double = { n1, n2 ->
         n1 + n2
+    }
+
+    // mesmo que a função soma2 porém com inferência de tipo
+    val soma3 = { n1: Double, n2: Double ->
+        n1 + n2
+    }
+
+    // mesmo que a função soma porém com inferência de tipo
+    val soma4 = { it: SomaClass ->
+        it.n1 + it.n2
     }
 
     println("chamando soma lambda")
     println(soma(SomaClass(1.0, 2.0)))
 
+    println("chamando soma lambda com inferência de tipo")
+    println(soma4(SomaClass(1.0, 2.0)))
+
     println("chamando soma2 lambda")
+    println(soma2(1.0, 2.0))
+
+    println("chamando soma2 lambda com inferência de tipo")
     println(soma2(1.0, 2.0))
 }
 
 fun testaSomaFuncaoAnonima() {
+    // inferência de tipo
     val teste = fun(n1: Double, n2: Double): Double {
+        return n1 + n2
+    }
+
+    val teste2: (Double, Double) -> Double = fun(n1, n2): Double {
         return n1 + n2
     }
     teste(1.0, 2.0)

@@ -1,6 +1,6 @@
 package br.com.chavesdavid.bytebank
 
-import testaFuncoesDeEscopo
+import br.com.chavesdavid.bytebank.test.functions.testaFuncoesDeEscopo
 
 fun main() {
     testaFuncoesDeEscopo()

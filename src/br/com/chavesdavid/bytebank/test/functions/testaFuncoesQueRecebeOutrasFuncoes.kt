@@ -1,3 +1,5 @@
+package br.com.chavesdavid.bytebank.test.functions
+
 import br.com.chavesdavid.bytebank.model.Cliente
 import br.com.chavesdavid.bytebank.model.Conta
 import br.com.chavesdavid.bytebank.model.ContaCorrente

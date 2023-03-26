@@ -2,7 +2,7 @@ import br.com.chavesdavid.bytebank.model.Cliente
 import br.com.chavesdavid.bytebank.model.Conta
 import br.com.chavesdavid.bytebank.model.ContaCorrente
 
-fun testaFuncoes() {
+fun testaFuncoesQueRecebeOutrasFuncoes() {
     val fulano1 = ContaCorrente(titular = Cliente(nome = "Fulano 1", cpf = "", senha = 123), numero = 1)
     val fulano2 = ContaCorrente(titular = Cliente(nome = "Fulano 2", cpf = "", senha = 1234), numero = 2)
     val fulano3 = ContaCorrente(titular = Cliente(nome = "Fulano 3", cpf = "", senha = 1235), numero = 3)

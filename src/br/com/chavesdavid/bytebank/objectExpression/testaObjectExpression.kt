@@ -9,6 +9,8 @@ fun testaObjectExpression() {
         override fun autentica(senha: Int): Boolean = this.senha == senha
     }
     val sistemaInterno = SistemaInterno()
-    sistemaInterno.entra(fran, 123)
+    sistemaInterno.entra(fran, 123, run = {
+        println("executa depois que estiver altenticado, - CALLBACK")
+    })
 
 }

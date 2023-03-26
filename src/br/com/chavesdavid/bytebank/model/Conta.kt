@@ -39,6 +39,10 @@ abstract class Conta(
         saldo -= valor
         destino.deposita(valor)
     }
+
+    override fun toString(): String {
+        return "Conta(titular=${titular.nome}, numero=$numero, saldo=$saldo)"
+    }
 }
 
 class ContaCorrente(

@@ -1,13 +1,7 @@
 package br.com.chavesdavid.bytebank
 
-import testaObjectExpression
+import testaFuncoesDeEscopo
 
 fun main() {
-//    Endereco(logradouro = "endereço em minusculo")
-//        .let {
-//            it.logradouro?.toUpperCase()
-//        }
-//        .let(::println)
-
-    testaObjectExpression()
+    testaFuncoesDeEscopo()
 }

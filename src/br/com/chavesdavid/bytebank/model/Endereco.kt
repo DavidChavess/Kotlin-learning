@@ -49,4 +49,11 @@ class Endereco(
             |)"""
             .trimMargin()
     }
+
+    fun completo(): String {
+        return """
+            $logradouro, nº: $numero, $bairro, $cidade - $estado, $cep 
+            $complemento
+        """.trimIndent()
+    }
 }
